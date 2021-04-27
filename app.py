@@ -35,7 +35,7 @@ MODEL_PATH ='h5model.h5'
 
 # Load your trained model
 model = tf.keras.models.load_model((MODEL_PATH),custom_objects={'KerasLayer':hub.KerasLayer})
-with open('model_regression','rb') as file:
+with open('model_logistic','rb') as file:
     regression_model = pickle.load(file)
 
 
