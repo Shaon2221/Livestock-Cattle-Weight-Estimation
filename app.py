@@ -71,14 +71,14 @@ def model_predict(img_path, model,regression_model):
       v=check(confidence)*2
       print(v)
       value=regression_model.predict(np.array([v]).reshape(1, 1))[0]
-      weight=(value/2.205)-180
+      weight=(value/2.205)-190
       result="Estimated Weight: "+str("{:.2f}".format(weight))+"±15 KG"
     elif preds==1:
       confidence=p[0][0]
       v=check(confidence)*3
       print(v)
       value=regression_model.predict(np.array([v]).reshape(1, 1))[0]
-      weight=(value/2.205)-120
+      weight=(value/2.205)-125
       result="Estimated Weight: "+str("{:.2f}".format(weight))+"±15 KG"
     elif preds==2:
       confidence=p[0][0]
