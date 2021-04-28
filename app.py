@@ -35,7 +35,7 @@ MODEL_PATH ='h5model.h5'
 
 # Load your trained model
 model = tf.keras.models.load_model((MODEL_PATH),custom_objects={'KerasLayer':hub.KerasLayer})
-with open('model_logistic','rb') as file:
+with open('model_regression','rb') as file:
     regression_model = pickle.load(file)
 
 
@@ -63,7 +63,7 @@ def model_predict(img_path, model,regression_model):
     preds=np.argmax(p, axis=1)
     print(preds)
     def check(confidence):
-      if confidence<0.8 or confidence>1:
+      if confidence<0.5 or confidence>1.7:
         confidence=0.9
         return confidence
     if preds==0:
