@@ -63,15 +63,15 @@ def model_predict(img_path, model,regression_model):
     preds=np.argmax(p, axis=1)
     print(preds)
     def check(confidence):
-      if confidence<0.5 or confidence>1.7:
+      if confidence<0.3 or confidence>1.7:
         confidence=0.9
-        return confidence
+      return confidence
     if preds==0:
       confidence=p[0][0]
       v=check(confidence)*2
       print(v)
       value=regression_model.predict(np.array([v]).reshape(1, 1))[0]
-      weight=(value/2.205)-190
+      weight=(value/2.205)-150
       result="Estimated Weight: "+str("{:.2f}".format(weight))+"±15 KG"
     elif preds==1:
       confidence=p[0][0]
