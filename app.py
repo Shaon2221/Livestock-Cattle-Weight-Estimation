@@ -74,42 +74,42 @@ def model_predict(img_path, model,regression_model):
       weight=(value/2.205)-150
       result="Estimated Weight: "+str("{:.2f}".format(weight))+"±15 KG"
     elif preds==1:
-      confidence=p[0][0]
+      confidence=p[0][1]
       v=check(confidence)*3
       print(v)
       value=regression_model.predict(np.array([v]).reshape(1, 1))[0]
       weight=(value/2.205)-125
       result="Estimated Weight: "+str("{:.2f}".format(weight))+"±15 KG"
     elif preds==2:
-      confidence=p[0][0]
+      confidence=p[0][2]
       v=check(confidence)*4
       print(v)
       value=regression_model.predict(np.array([v]).reshape(1, 1))[0]
       weight=(value/2.205)-100
       result="Estimated Weight: "+str("{:.2f}".format(weight))+"±15 KG"
     elif preds==3:
-      confidence=p[0][0]
+      confidence=p[0][3]
       v=check(confidence)*5
       print(v)
       value=regression_model.predict(np.array([v]).reshape(1, 1))[0]
       weight=(value/2.205)-80
       result="Estimated Weight: "+str("{:.2f}".format(weight))+"±15 KG"
     elif preds==4:
-      confidence=p[0][0]
+      confidence=p[0][4]
       v=check(confidence)*6
       print(v)
       value=regression_model.predict(np.array([v]).reshape(1, 1))[0]
       weight=(value/2.205)-100
       result="Estimated Weight: "+str("{:.2f}".format(weight))+"±15 KG"
     elif preds==5:
-      confidence=p[0][0]
+      confidence=p[0][5]
       v=check(confidence)*7
       print(v)
       value=regression_model.predict(np.array([v]).reshape(1, 1))[0]
       weight=(value/2.205)+10
       result="Estimated Weight: "+str("{:.2f}".format(weight))+"±15 KG"
     elif preds==6:
-      confidence=p[0][0]
+      confidence=p[0][6]
       v=check(confidence)*8
       print(v)
       value=regression_model.predict(np.array([v]).reshape(1, 1))[0]
